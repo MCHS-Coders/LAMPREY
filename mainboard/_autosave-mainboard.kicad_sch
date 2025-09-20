@@ -12944,7 +12944,7 @@
 	)
 	(symbol
 		(lib_id "RF_Bluetooth:nRF8001")
-		(at 81.28 242.57 0)
+		(at 118.11 212.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12953,7 +12953,7 @@
 		(fields_autoplaced yes)
 		(uuid "f3aebd33-e071-4dc1-8881-cf93efcd5076")
 		(property "Reference" "U4"
-			(at 88.5033 220.98 0)
+			(at 125.3333 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12962,7 +12962,7 @@
 			)
 		)
 		(property "Value" "nRF8001"
-			(at 88.5033 223.52 0)
+			(at 125.3333 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12971,7 +12971,7 @@
 			)
 		)
 		(property "Footprint" "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm"
-			(at 81.28 273.05 0)
+			(at 118.11 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12980,7 +12980,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.nordicsemi.com/eng/nordic/content_download/2981/38488/file/nRF8001_PS_v1.3.pdf"
-			(at 81.28 243.84 0)
+			(at 118.11 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12989,7 +12989,7 @@
 			)
 		)
 		(property "Description" "BLE LE Connectivity IC, QFN-32"
-			(at 81.28 242.57 0)
+			(at 118.11 212.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
