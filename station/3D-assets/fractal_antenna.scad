@@ -1,52 +1,44 @@
-// Parameters for the fractal
-level = 4;         // Recursion depth
-length = 40;       // Length of the initial segment
-angle = 60;        // Angle for the arrowhead fractal pattern
-tube_diameter = 2; // Diameter of the tubes (antennas)
+// Function to draw a line segment
+module draw_segment(length) {
+    // A simple line is represented by a small rectangle (polygon)
+    polygon([[0, 0], [length, 0]]);
+}
 
-// Function to generate and store the fractal lines (tubes)
-module arrowhead_fractal(level, p1, p2) {
+// Recursive Fractal Tree Function
+module fractal_tree(level, length, angle) {
     if (level == 0) {
-        // Base case: just add the tube (line) from p1 to p2
-        draw_line(p1, p2);
+        draw_segment(length); // Base case: Draw a segment
     } else {
-        // Midpoint of the segment p1-p2
-        midpoint = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2, (p1[2] + p2[2]) / 2];
+        // Draw the current segment
+        draw_segment(length);
 
-        // Calculate the offset for the fractal arrowhead (rotation of 60 degrees)
-        offset = [0, length * sqrt(3) / 2, 0];  // Vertical offset for arrowhead pattern
-        offset = offset * (1 / 2); // Scale based on recursion level
+        // Move to the next position and recursively draw the left and right branches
+        push();
+        rotate([0, 0, angle]); // Rotate the segment to the right
+        translate([length, 0]) // Move to the end of the current segment
+        fractal_tree(level - 1, length / 2, -angle); // Left branch
+        pop();
 
-        // Recursively generate smaller fractal segments
-        arrowhead_fractal(level - 1, p1, midpoint + offset);  // First segment
-        arrowhead_fractal(level - 1, midpoint + offset, p2);  // Second segment
+        push();
+        rotate([0, 0, -angle]); // Rotate the segment to the left
+        translate([length, 0]) // Move to the end of the current segment
+        fractal_tree(level - 1, length / 2, angle); // Right branch
+        pop();
     }
 }
 
-// Function to draw a tube (line) between two points
-module draw_line(p1, p2) {
-    // Create a tube between points p1 and p2
-    // Use the OpenSCAD "cylinder" function to draw the tube (a line segment)
-    
-    // Calculate the distance between the two points
-    dist = distance(p1, p2);
+// Main Code to draw multiple trees
+d = 220; // Distance factor
+b = 300; // Base offset for positioning the fractal trees
 
-    // Calculate the axis of the line (direction from p1 to p2)
-    direction = normalize(p2 - p1);
+// Loop to draw multiple fractal trees at different positions
+for (level = [0:6]) {
+    x_offset = d * floor(level / 3) - b;
+    y_offset = d * (level % 3) - b;
 
-    // Create a cylinder between p1 and p2 (with given diameter and length)
-    translate(p1)
-        rotate(a = [0, 0, atan2(direction[1], direction[0])])
-            rotate([90, 0, 0]) 
-                cylinder(h = dist, r1 = tube_diameter / 2, r2 = tube_diameter / 2);
+    // Position the fractal tree at the desired location
+    translate([x_offset, y_offset]) {
+        rotate([0, 0, 60 * (level % 2 == 1 ? 1 : 0)]) // Rotate for odd levels
+        fractal_tree(level, 200, 60); // Draw the tree with initial length and angle
+    }
 }
-
-// Calculate the distance between two points
-function distance(p1, p2) = sqrt((p2[0] - p1[0])^2 + (p2[1] - p1[1])^2 + (p2[2] - p1[2])^2);
-
-// Initial points for the fractal line (start and end)
-start_point = [0, 0, 0];         // Starting point
-end_point = [length, 0, 0];      // Ending point (along X-axis)
-
-// Generate the fractal by recursively drawing tubes
-arrowhead_fractal(level, start_point, end_point);
