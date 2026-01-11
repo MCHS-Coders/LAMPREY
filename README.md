@@ -50,6 +50,9 @@ Development has even been delayed for the sake of safe deployment.
 **If any one of these is not ready by the presentation, please note very much effort has been poured into this project.**
 **PLEASE let us know of your concerns for this project at [Q&A] if you see fit.**
 
+## DEVELOPERS
+**Ethan and Bryson Lee** are the only developers on this project.
+
 [wiki]: https://github.com/MCHS-Coders/LAMPREY/wiki
 [issues]: https://github.com/MCHS-Coders/LAMPREY/issues
 [Q&A]: https://github.com/MCHS-Coders/LAMPREY/discussions/3
