@@ -45,6 +45,8 @@ Development has even been delayed for the sake of safe deployment.
   - [ ] **UI** and **UX** design
   - [ ] Correctly implement support for **hardware**
   - [ ] Add safety awareness videos to risk awareness library
+  - [ ] Functional firmware implementation
+  - [ ] Functional cross-platform application implementation
   - [ ] Have a **<ins>functional prototype</ins>**
 
 **If any one of these is not ready by the presentation, please note very much effort has been poured into this project.**
