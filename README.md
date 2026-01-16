@@ -32,7 +32,7 @@ Development has even been delayed for the sake of safe deployment.
 
 ## Checklist
 - [ ] **Mesh Network Weather Probes**
-  - [ ] Utilize **solar power** on mesh networks
+  - [x] Utilize **solar power** on mesh networks
   - [ ] Support **LoRa-based** mesh network communication
   - [ ] Support **Wi-Fi** communications
   - [ ] Support **Bluetooth-LE** communications
@@ -41,7 +41,7 @@ Development has even been delayed for the sake of safe deployment.
   - [ ] Have a **<ins>functional prototype</ins>**
 
 - [ ] **LOOP Software Stack**
-  - [ ] Skeleton code implemented
+  - [x] Skeleton code implemented
   - [ ] **UI** and **UX** design
   - [ ] Correctly implement support for **hardware**
   - [ ] Add safety awareness videos to risk awareness library
