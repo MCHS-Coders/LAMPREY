@@ -33,7 +33,7 @@ Development has even been delayed for the sake of safe deployment.
 ## Checklist
 - [ ] **Mesh Network Weather Probes**
   - [x] Utilize **solar power** on mesh networks
-  - [ ] Support **LoRa-based** mesh network communication
+  - [x] Support **LoRa-based** mesh network communication
   - [ ] Support **Wi-Fi** communications
   - [ ] Support **Bluetooth-LE** communications
   - [ ] Successfully utilize **Patch Antennas** for **GOES-R**
